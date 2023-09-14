@@ -46,6 +46,7 @@ def faster_subsum(list)
             largest_sum = current_sum 
         end
     end
+    
     if current_sum == 0
         largest_sum = list[0]
         list.each do |ele|
