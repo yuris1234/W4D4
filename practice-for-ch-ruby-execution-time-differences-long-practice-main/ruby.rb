@@ -43,7 +43,7 @@ def faster_subsum(list)
         if current_sum < 0
             current_sum = 0
         elsif current_sum > largest_sum
-            largest_sum = current_sum - ele 
+            largest_sum = current_sum 
         end
     end
     if current_sum == 0
@@ -59,4 +59,5 @@ end
 
 p faster_subsum([-1,-2,-3])
 p faster_subsum([1,2,4,-1,5,1,-1,9,10])
+p faster_subsum([100,200,-1,300,400])
 p faster_subsum([1,-1,2,-1,2,0,0,9])
