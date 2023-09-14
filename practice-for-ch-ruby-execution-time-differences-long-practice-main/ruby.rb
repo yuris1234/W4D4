@@ -39,16 +39,11 @@ def faster_subsum(list)
     current_sum = 0
 
     list.each do |ele|
-        if ele > 0
-            current_sum += ele
-            if current_sum > largest_sum
-                largest_sum = current_sum
-            end
-        elsif ele <= 0
-            if current_sum > largest_sum
-                largest_sum = current_sum
-            end
+        current_sum += ele
+        if current_sum < 0
             current_sum = 0
+        elsif current_sum > largest_sum
+            largest_sum = current_sum - ele 
         end
     end
     if current_sum == 0
