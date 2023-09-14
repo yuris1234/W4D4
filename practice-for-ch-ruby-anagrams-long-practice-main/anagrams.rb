@@ -50,7 +50,15 @@ def fourth_anagram?(string1,string2)
 
     hash = Hash.new(0)
 
-    
+    string1.each_char do |char|
+        hash[char] += 1
+    end
+
+    string2.each_char do |char|
+        hash[char] -= 1
+    end
+
+    hash.values.all? {|value| value == 0}
 end
 
 p fourth_anagram?("gizmo", "sally")   
