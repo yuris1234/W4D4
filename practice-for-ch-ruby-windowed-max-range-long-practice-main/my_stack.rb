@@ -1,4 +1,6 @@
 class MyStack
+    attr_reader :store 
+
     def initalize
         @store = []
     end
