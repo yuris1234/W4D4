@@ -1,5 +1,5 @@
 def first_anagram?(string1,string2)
-    split = string1.split
+    split = string1.split("")
     perms = split.permutation.to_a
 
     perms = perms.map do |ele|
