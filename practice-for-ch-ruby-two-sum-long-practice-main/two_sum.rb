@@ -9,7 +9,7 @@ def bad_two_sum?(arr, target_sum) # O(n**2)
     false             
 end
 
-def okay_two_sum(arr, target_sum) # O(n log n) + O(n) => O(n)
+def okay_two_sum(arr, target_sum) # O(n log n) + O(n) => O(n log n)
     arr = merge_array(arr)
     i = 0
     j = arr.length - 1
@@ -47,5 +47,23 @@ arr = [0, 1, 5, 7]
 # arr = [3,5,1,4,7]
 # p bad_two_sum?(arr, 6) # => should be true
 # p bad_two_sum?(arr, 10) # => should be false
-
 # p okay_two_sum(arr, 5)
+
+def best_two_sum(array,target_sum)
+    hash = Hash.new(0)
+
+    array.each do |ele|
+        if ele == target_sum
+            hash[ele] = 0
+        elsif ele > target_sum 
+            hash[ele] = ele - target_sum
+        else
+            hash[ele] = target_sum - ele
+        end
+    end
+
+    array.each do |ele|
+        if ele == target_sum
+            hash[0]
+    end
+end
