@@ -50,20 +50,14 @@ arr = [0, 1, 5, 7]
 # p okay_two_sum(arr, 5)
 
 def best_two_sum(array,target_sum)
-    hash = Hash.new(0)
+    hash = Hash.new
 
     array.each do |ele|
-        if ele == target_sum
-            hash[ele] = 0
-        elsif ele > target_sum 
-            hash[ele] = ele - target_sum
-        else
-            hash[ele] = target_sum - ele
-        end
+        return true if hash.has_key?(ele)
+        hash[target_sum - ele] = ele
     end
 
-    array.each do |ele|
-        if ele == target_sum
-            hash[0]
-    end
+    false
 end
+
+p best_two_sum(arr, 6)
